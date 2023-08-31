@@ -97,8 +97,7 @@ proc template;
 					linearopts=(tickvaluelist=(1 4 8 10 24 48 72 96) viewmin=TICKMIN viewmax=TICKMAX TICKVALUEFITPOLICY=ROTATE)
 					tickvalueattrs=(size=7pt) labelattrs=(size=7pt))
 	    		yaxisopts=(label="Concentration (ng/mL)" TYPE=LINEAR) ;
-				seriesplot y=YVAR x=XVAR /  group=groupmarkers name="scatter" /*ERRORBARCAPSHAPE=NONE*/ YERRORLOWER=meanlow YERRORUPPER=meanhig;
-				scatterplot y=YVAR x=XVAR / group=groupmarkers name="scatter2";
+				seriesplot y=YVAR x=XVAR / display=all group=groupmarkers name="scatter" YERRORLOWER=meanlow YERRORUPPER=meanhig;
 				
 				layout gridded / width=400px height=300px halign=right valign=top;
 					layout overlay/
@@ -106,11 +105,10 @@ proc template;
 							linearopts=(tickvaluelist=(1 2 3 4 6 8 10) viewmin=TICKMIN viewmax=TICKMAX2 TICKVALUEFITPOLICY=ROTATE)
 							tickvalueattrs=(size=7pt) labelattrs=(size=7pt))
 			    		yaxisopts=(label="Concentration (ng/mL)" TYPE=LINEAR) ;
-						seriesplot y=Mean2 x=XVAR / group=groupmarkers /*ERRORBARCAPSHAPE=NONE*/ YERRORLOWER=meanlow2 YERRORUPPER=meanhig2;
-						scatterplot y=Mean2 x=XVAR / group=groupmarkers;
+						seriesplot y=Mean2 x=XVAR / display=all group=groupmarkers YERRORLOWER=meanlow2 YERRORUPPER=meanhig2;
 					endlayout;
 			    endlayout;
-			   mergedlegend "scatter" "scatter2"/title=LENGEDTITLE across=5 DISPLAYCLIPPED=TRUE;
+			   discretelegend "scatter"/title=LENGEDTITLE across=5 DISPLAYCLIPPED=TRUE;
 			endlayout;
 		endgraph;
 	end;
