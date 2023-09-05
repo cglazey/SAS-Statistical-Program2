@@ -128,6 +128,7 @@ QUIT;
 data Density2;
 	merge Density maxdens BoxPlotStats;
 	by Species_n;
+	id=_n_;
 	density = Density * 0.2/ max_dens;
 	if SepalLength le max((1.5*qrange ) +q3,max) and SepalLength ge min(q1-(1.5*qrange),min);
 run;
@@ -182,3 +183,65 @@ proc template;
 run;
 
 proc sgrender data=GraphData3 template=rainbox;run;
+
+/*---------------------------------------------------------------------------------------------------------------
+|Part 4 advanced version
+---------------------------------------------------------------------------------------------------------------*/
+data Density3;
+	set Density2;
+	by Species_n SepalLength;
+
+	xviolin=Species_n+density;yviolin=SepalLength;id=id;output;
+	xviolin=Species_n-density;yviolin=SepalLength;id=-id;output;
+	if last.Species_n then do;
+		xviolin=Species_n+density;yviolin=SepalLength;id=-1000000;output;
+	end;
+run;
+proc sort data=Density3;by Species_n id ;run;
+
+DATA GraphData4;
+	SET Density3(in=dens)
+		BoxPlotStats(IN =box)
+		Iris (IN = iris);
+	/*Roin code X asix skewing*/
+	IF iris THEN DO ;
+		Scatter_X = Species_n-0.375;
+	END;
+	
+	IF box THEN DO;
+		/*box series*/
+		xbox=Species_n-0.1;ybox=q3;output;
+		xbox=Species_n+0.1;ybox=q3;output;
+		xbox=Species_n+0.1;ybox=q1;output;
+		xbox=Species_n-0.1;ybox=q1;output;
+		xbox=Species_n-0.1;ybox=q3;output;
+		/*Whisker series*/
+		xWhisker=Species_n;yWhisker=max((1.5*qrange ) +q3,max);output;
+		xWhisker=Species_n;yWhisker=min(q1-(1.5*qrange),min);output;
+
+	END;
+	else if dens then do;
+		output;
+	end;
+	else if iris then do;
+		output;
+	end;
+	format Species_n Species_n.;
+RUN;
+
+proc template;
+	define statgraph rainbox;
+		begingraph;
+		
+			layout overlay;      
+		        scatterplot x=Scatter_X y=SepalLength/jitter =auto group=Species_n;
+		        seriesplot x=xbox y= ybox /group=Species_n;
+		        seriesplot x=xWhisker y= yWhisker /group=Species_n;
+		        seriesplot x=xviolin y= yviolin /group=Species_n;
+		      endlayout;
+
+		endgraph;
+	end;
+run;
+
+proc sgrender data=GraphData4 template=rainbox;run;
