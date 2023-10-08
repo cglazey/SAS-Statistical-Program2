@@ -67,7 +67,7 @@ timeline
 
 ## FORMAT式翻译探索
 
-通过将翻译内容转换成变量的FORMAT来实现数据集的翻译，可以极大程度上保证数据集的正确性，极大地减少了工作量。
+通过将翻译内容转换成变量的FORMAT[^3]来实现数据集的翻译，可以极大程度上保证数据集的正确性，极大地减少了工作量。
 
 关于[***FORMAT式翻译***]的递交问题，个人认为通过一定的处理使得审阅时：
 - 呈现翻译后的数据集
@@ -77,3 +77,4 @@ timeline
 
 [^1]: [《药物临床试验数据递交指导原则（试行）》](https://www.cde.org.cn/zdyz/domesticinfopage?zdyzIdCODE=776d02bd9234511f00da866a30760de1)
 [^2]: [《体外诊断试剂临床试验数据递交要求注册审查指导原则》](https://www.nmpa.gov.cn/ylqx/ylqxggtg/20211125173931195.html)
+[^3]: [ FORMAT定义 ](https://documentation.sas.com/doc/zh-CN/pgmsascdc/9.4_3.5/leforinforref/p0hix48i0fau1wn1vupa38achpt3.htm)
