@@ -55,4 +55,4 @@ timeline
 - 自由文本 ：记录的描述性文本
 
 [^1]: [《药物临床试验数据递交指导原则（试行）》](https://www.cde.org.cn/zdyz/domesticinfopage?zdyzIdCODE=776d02bd9234511f00da866a30760de1)
-[^2]: [体外诊断试剂临床试验数据递交要求注册审查指导原则](https://www.nmpa.gov.cn/ylqx/ylqxggtg/20211125173931195.html)
+[^2]: [《体外诊断试剂临床试验数据递交要求注册审查指导原则》](https://www.nmpa.gov.cn/ylqx/ylqxggtg/20211125173931195.html)
