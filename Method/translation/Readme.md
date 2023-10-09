@@ -98,6 +98,23 @@ timeline
 生成FORMAT时，有一个需要在翻译原始数据库前需要处理的问题，对于英文的原始数据库自由文本，通常含有特殊字符（&%'"）影响PROC FORMAT过程生成。    
 需要将原始值中的特殊字符（&%'"）进行处理，删除通常是比较快捷的方法，且对最终呈现的翻译结果几无影响。    
 
+## 程序翻译
+
+即使采用FORMAT式翻译方法，程序中仍有需要翻译和修改的地方。
+
+### 常规翻译
+
+分析数据集程序中的衍生变量，可选择直接翻译或额外增加FORMAT解决。
+
+### FORMAT输出
+
+在TFL输出结果中，常常需要将FORMAT应用于输出结果，产生翻译后的样式。
+
+### 文本查找替换
+
+程序中通常含有一些相同语句，需要进行相同替换时，需批量处理提高效率。    
+不同语言的SAS软件导致的过程步数据集中中英文的描述，也是需要翻译的重点。    
+
 [^1]: [《药物临床试验数据递交指导原则（试行）》](https://www.cde.org.cn/zdyz/domesticinfopage?zdyzIdCODE=776d02bd9234511f00da866a30760de1)
 [^2]: [《体外诊断试剂临床试验数据递交要求注册审查指导原则》](https://www.nmpa.gov.cn/ylqx/ylqxggtg/20211125173931195.html)
 [^3]: [FORMAT定义 ](https://documentation.sas.com/doc/zh-CN/pgmsascdc/9.4_3.5/leforinforref/p0hix48i0fau1wn1vupa38achpt3.htm)
