@@ -72,9 +72,9 @@ timeline
 关于[***FORMAT式翻译***]的递交问题，个人认为通过一定的处理使得审阅时：
 - 呈现翻译后的数据集
 - 呈现翻译后的结果
-  
+
 且结果一致无误，即可以尝试进行递交。
 
 [^1]: [《药物临床试验数据递交指导原则（试行）》](https://www.cde.org.cn/zdyz/domesticinfopage?zdyzIdCODE=776d02bd9234511f00da866a30760de1)
 [^2]: [《体外诊断试剂临床试验数据递交要求注册审查指导原则》](https://www.nmpa.gov.cn/ylqx/ylqxggtg/20211125173931195.html)
-[^3]: [ FORMAT定义 ](https://documentation.sas.com/doc/zh-CN/pgmsascdc/9.4_3.5/leforinforref/p0hix48i0fau1wn1vupa38achpt3.htm)
+[^3]: [FORMAT定义 ](https://documentation.sas.com/doc/zh-CN/pgmsascdc/9.4_3.5/leforinforref/p0hix48i0fau1wn1vupa38achpt3.htm)
