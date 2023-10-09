@@ -93,6 +93,11 @@ timeline
 
 且结果一致无误，即可以尝试进行递交。
 
+### 生成FORMAT
+
+生成FORMAT时，有一个需要在翻译原始数据库前需要处理的问题，对于英文的原始数据库自由文本，通常含有特殊字符（&%'"）影响PROC FORMAT过程生成。    
+需要将原始值中的特殊字符（&%'"）进行处理，删除通常是比较快捷的方法，且对最终呈现的翻译结果几无影响。    
+
 [^1]: [《药物临床试验数据递交指导原则（试行）》](https://www.cde.org.cn/zdyz/domesticinfopage?zdyzIdCODE=776d02bd9234511f00da866a30760de1)
 [^2]: [《体外诊断试剂临床试验数据递交要求注册审查指导原则》](https://www.nmpa.gov.cn/ylqx/ylqxggtg/20211125173931195.html)
 [^3]: [FORMAT定义 ](https://documentation.sas.com/doc/zh-CN/pgmsascdc/9.4_3.5/leforinforref/p0hix48i0fau1wn1vupa38achpt3.htm)
