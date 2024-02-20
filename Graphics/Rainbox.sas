@@ -245,3 +245,37 @@ proc template;
 run;
 
 proc sgrender data=GraphData4 template=rainbox;run;
+
+/*---------------------------------------------------------------------------------------------------------------
+|Part 5 add p values
+---------------------------------------------------------------------------------------------------------------*/
+data pvalue;
+	Species_n=1.5;high=1;low=2;pvalue='p=0.0001';pv=80;output;
+	Species_n=2.5;high=2;low=3;pvalue='p=0.0002';pv=85;output;
+	Species_n=2;high=1;low=3;pvalue='p=0.0003';pv=90;output;
+	format Species_n Species_n.;
+run;
+
+DATA GraphData5;
+	SET pvalue
+		GraphData4;
+	format Species_n Species_n.;
+RUN;
+
+proc template;
+	define statgraph rainbox;
+		begingraph;
+		
+			layout overlay;      
+				scatterplot x=Species_n y=pv/markerattrs=(transparency=1) errorbarattrs=(pattern=1) datalabel=pvalue datalabelposition=top xerrorlower=low xerrorupper=high ;
+		        scatterplot x=Scatter_X y=SepalLength/jitter =auto group=Species_n;
+		        seriesplot x=xbox y= ybox /group=Species_n;
+		        seriesplot x=xWhisker y= yWhisker /group=Species_n;
+		        seriesplot x=xviolin y= yviolin /group=Species_n;
+		      endlayout;
+
+		endgraph;
+	end;
+run;
+
+proc sgrender data=GraphData5 template=rainbox;run;
