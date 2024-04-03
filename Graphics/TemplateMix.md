@@ -7,19 +7,19 @@ dynamic _byval_ /*proc sgender 的by变量，用于个体图*/
 	_byval3_ /*proc sgender 的by变量，用于个体图，暂时未考虑第3个by变量*/
 	XAXISLABEL /*X轴标签*/
 	YAXISLABEL /*Y轴标签*/
-	xtickvaluelist /*X轴刻度*/
-	ytickvaluelist /*Y轴线性刻度，用于线性图时常置空*/
-	ytickvaluelistlog /*Y轴对数刻度，用于对数图，常为10指数*/
-	XTICKMIN /*X轴刻度最小值，用于调整*/
-	XTICKMAX /*X轴刻度最大值，用于调整*/
-	YTICKMIN /*Y轴刻度最小值，用于调整*/
-	YTICKMAX /*Y轴刻度最大值，用于调整*/
-	YVAR /*Y轴变量，如浓度，浓度均值、中位数等*/
+	xtickvaluelist /*X轴刻度列表*/
+	ytickvaluelist /*Y轴线性刻度列表，用于线性图时常置空*/
+	ytickvaluelistlog /*Y轴对数刻度列表，用于对数图，常为10指数，1 10 100 1000*/
+	XTICKMIN /*X轴刻度最小值，用于调整X轴显示范围*/
+	XTICKMAX /*X轴刻度最大值，用于调整X轴显示范围*/
+	YTICKMIN /*Y轴刻度最小值，用于调整Y轴显示范围*/
+	YTICKMAX /*Y轴刻度最大值，用于调整Y轴显示范围*/
+	YVAR /*Y轴变量，如浓度，浓度均值、浓度中位数等*/
 	LOGYVAR /*Y轴对数变量，如浓度，浓度均值、中位数等，用于解决YVAR为0时无法正确显示对数刻度的变量*/
-	XVAR /*Y轴变量*/
+	XVAR /*X轴变量*/
 	GRPVAR /*分组变量*/
-	LOWBAR /*均值图中的下限值*/
-	UPBAR /*均值图中的上限值*/
+	LOWBAR /*均值图中的下限值变量*/
+	UPBAR /*均值图中的上限值变量*/
 	LENGEDTITLE /*图例名称*/
 	;
 ```
