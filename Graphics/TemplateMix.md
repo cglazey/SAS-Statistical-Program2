@@ -1,10 +1,27 @@
 ## 药时曲线系列图[模板](Graphics/TemplateMix.sas)使用说明
 
+dynamic variables specification:
 ```
-dynamic _byval_ _byval2_ _byval3_ XAXISLABEL YAXISLABEL 
-			xtickvaluelist ytickvaluelist ytickvaluelistlog
-			XTICKMIN XTICKMAX YTICKMIN YTICKMAX
-			YVAR LOGYVAR XVAR GRPVAR LOWBAR UPBAR LENGEDTITLE ;
+dynamic _byval_ /*proc sgender 的by变量，用于个体图*/
+	_byval2_ /*proc sgender 的by变量，用于个体图，暂时未考虑第2个by变量*/
+	_byval3_ /*proc sgender 的by变量，用于个体图，暂时未考虑第3个by变量*/
+	XAXISLABEL /*X轴标签*/
+	YAXISLABEL /*Y轴标签*/
+	xtickvaluelist /*X轴刻度*/
+	ytickvaluelist /*Y轴线性刻度，用于线性图时常置空*/
+	ytickvaluelistlog /*Y轴对数刻度，用于对数图，常为10指数*/
+	XTICKMIN /*X轴刻度最小值，用于调整*/
+	XTICKMAX /*X轴刻度最大值，用于调整*/
+	YTICKMIN /*Y轴刻度最小值，用于调整*/
+	YTICKMAX /*Y轴刻度最大值，用于调整*/
+	YVAR /*Y轴变量，如浓度，浓度均值、中位数等*/
+	LOGYVAR /*Y轴对数变量，如浓度，浓度均值、中位数等，用于解决YVAR为0时无法正确显示对数刻度的变量*/
+	XVAR /*Y轴变量*/
+	GRPVAR /*分组变量*/
+	LOWBAR /*均值图中的下限值*/
+	UPBAR /*均值图中的上限值*/
+	LENGEDTITLE /*图例名称*/
+	;
 ```
 
 ### 平均血药浓度-时间曲线图（Mean±SD，线性和半对数）
